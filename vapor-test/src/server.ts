@@ -6,6 +6,7 @@ import { Application, Router, send } from "https://deno.land/x/oak/mod.ts";
  */
 const [diagnostics, js] = await Deno.bundle("./src/client.ts", undefined, {
   lib: ["dom", "dom.iterable", "es2018"],
+  experimentalDecorators: true
 }); // more lib options: https://www.typescriptlang.org/docs/handbook/compiler-options.html
 
 if (diagnostics) {
